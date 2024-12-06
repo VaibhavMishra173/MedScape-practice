@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block title %}Feedback{% endblock %} {% block content
+%}
+<h1 align="center">Suggestion</h1>
+<ul class="list-group list-group-flush" id="notes">
+  {% for note in user.notes %}
+  <li class="list-group-item">
+    {{ note.data }}
+    <button type="button" class="close" onClick="deleteNote({{ note.id }})">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <h6 align="center">Have we worked on it? If yes then go ahead and remove it!</h6>
+  </li>
+  {% endfor %}
+</ul>
+<form method="POST">
+  <textarea name="note" id="note" class="form-control"></textarea>
+  <br />
+  <div align="center">
+    <button type="submit" class="btn btn-primary">Suggest</button>
+  </div>
+</form>
+{% endblock %}

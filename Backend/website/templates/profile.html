@@ -1,0 +1,13 @@
+{% extends "base.html" %} {% block title %}Profile{% endblock %} {% block content
+    %}
+    <h1 align="center">User Profile</h1>
+    <br>
+    <form align="center" action="http://localhost:5000/profile" enctype="multipart/form-data" method="POST">
+        <h4 align="center" class='m-5'> Upload your blood report image here</h4> 
+        <input class='form-control' type="file" name="pic" accept="image/*">
+        <p class='m-5'><strong>Note:</strong> Right now we only allow to upload image only.</p>
+        <div align="center" class='m-5'>
+            <button type="submit" value="Upload a file" class="btn btn-primary">Upload</button>
+        </div>
+    </form>
+    {% endblock %}
